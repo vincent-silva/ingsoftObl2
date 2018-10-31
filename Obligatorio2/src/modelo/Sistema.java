@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema;
+package modelo;
 
 /**
  *
  * @author vince
  */
-public class Evento {
+public class Sistema {
     
 }

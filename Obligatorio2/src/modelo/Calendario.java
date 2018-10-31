@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema;
+package modelo;
+
+import java.time.LocalDateTime;
 
 /**
  *
  * @author vince
  */
-public class Familia {
-    
+public class Calendario {
+    private Persona responsable;
+    private int actividad;
+    private LocalDateTime fecha;
 }

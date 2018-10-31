@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema;
+package modelo;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author vince
  */
-public class Persona {
-    
+public class Familia {
+    private ArrayList<Mascota> mascotas;
+    private ArrayList<Persona> integrantes;
 }
