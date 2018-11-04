@@ -45,4 +45,9 @@ public class Persona {
     public void setSexo(char unSexo){
         this.sexo = unSexo;
     }
+    
+    @Override
+    public boolean equals(Object obj){
+        return this.getNomnbre().toUpperCase().equals(((Persona)obj).getNomnbre().toUpperCase());
+    }
 }

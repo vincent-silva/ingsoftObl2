@@ -17,9 +17,9 @@ public class Mascota {
     private String imagen;
 
     public Mascota(String unNombre, float unAltura, float unPeso, String unComentario, String unaImagen) {
-        this.nombre = nombre;
-        this.altura = altura;
-        this.peso = peso;
+        this.nombre = unNombre;
+        this.altura = unAltura;
+        this.peso = unPeso;
         this.comentarios = unComentario;
         this.imagen = unaImagen;
     }
@@ -69,5 +69,10 @@ public class Mascota {
 
     public void setImagen(String imagen) {
         this.imagen = imagen;
+    }
+    
+    @Override
+    public boolean equals(Object obj){
+        return this.getNomnbre().toUpperCase().equals(((Mascota)obj).getNomnbre().toUpperCase());
     }
 }

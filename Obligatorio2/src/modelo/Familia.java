@@ -61,7 +61,11 @@ public class Familia {
         this.mascotas.add(unaMascota);
     }
     
-    public void delIntegrante(Mascota unaMascota) {
+    public void delMascota(Mascota unaMascota) {
         this.mascotas.remove(unaMascota);
+    }
+    @Override
+    public boolean equals(Object obj){
+        return this.getNombre().toUpperCase().equals(((Familia)obj).getNombre().toUpperCase());
     }
 }
