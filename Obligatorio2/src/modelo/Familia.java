@@ -12,16 +12,26 @@ import java.util.ArrayList;
  * @author vince
  */
 public class Familia {
+    private String nombre;
     private ArrayList<Mascota> mascotas;
     private ArrayList<Persona> integrantes;
 
     public Familia() {
-        
+        this.nombre = "NN";
+        this.mascotas = null;
+        this.integrantes = null;
     }
     
-    public Familia(ArrayList<Mascota> mascotas, ArrayList<Persona> integrantes) {
-        this.mascotas = mascotas;
-        this.integrantes = integrantes;
+    public Familia(String unNombre) {
+        this.nombre = unNombre;
+        this.mascotas = null;
+        this.integrantes = null;
+    }
+    public String getNombre(){
+        return nombre;
+    }
+    public void setNombre(String unNombre){
+        this.nombre = unNombre;
     }
 
     public ArrayList<Mascota> getMascotas() {
@@ -40,11 +50,18 @@ public class Familia {
         this.integrantes = integrantes;
     }
     
-    public void addIntegrante(Persona integrante) {
-        this.integrantes.add(integrante);
+    public void addIntegrante(Persona unIntegrante) {
+        this.integrantes.add(unIntegrante);
     }
     
-    public void delIntegrante(Persona integrante) {
-        this.integrantes.remove(integrante);
+    public void delIntegrante(Persona unIntegrante) {
+        this.integrantes.remove(unIntegrante);
+    }
+    public void addMascota(Mascota unaMascota) {
+        this.mascotas.add(unaMascota);
+    }
+    
+    public void delIntegrante(Mascota unaMascota) {
+        this.mascotas.remove(unaMascota);
     }
 }

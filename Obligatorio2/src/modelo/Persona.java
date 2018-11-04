@@ -11,5 +11,38 @@ package modelo;
  */
 public class Persona {
     private String nombre;
+    private float edad;
+    private char sexo;
+
+
+    public Persona(){
+        this.nombre = "NN";
+        this.edad = 0;
+        this.sexo = 'Q';
+    }
     
+    public Persona(String unNombre, float unaEdad, char unSexo){
+        this.nombre = unNombre;
+        this.edad = unaEdad;
+        this.sexo = unSexo;
+    }
+    
+    public String getNomnbre() {
+        return nombre;
+    }
+    public void setNomnbre(String unNombre) {
+        this.nombre = unNombre;
+    }    
+    public float getEdad(){
+        return edad;
+    }
+    public void setEdad(float unaEdad){
+        this.edad = unaEdad;
+    }
+    public char getSexo(){
+        return sexo;
+    }
+    public void setSexo(char unSexo){
+        this.sexo = unSexo;
+    }
 }

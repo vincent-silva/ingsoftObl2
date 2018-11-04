@@ -14,6 +14,6 @@ import java.util.ArrayList;
 public class Sistema {
     ArrayList<Mascota> mascotas = new ArrayList<>();
     ArrayList<Persona> personas = new ArrayList<>();
-    Familia familia = new Familia(mascotas, personas);
+    Familia familia = new Familia();
     
 }

@@ -10,24 +10,33 @@ package modelo;
  * @author vince
  */
 public class Mascota {
-    private String nomnbre;
+    private String nombre;
     private float altura;
     private float peso;
     private String comentarios;
     private String imagen;
 
-    public Mascota(String nomnbre, float altura, float peso) {
-        this.nomnbre = nomnbre;
+    public Mascota(String unNombre, float unAltura, float unPeso, String unComentario, String unaImagen) {
+        this.nombre = nombre;
         this.altura = altura;
         this.peso = peso;
+        this.comentarios = unComentario;
+        this.imagen = unaImagen;
+    }
+    public Mascota() {
+        this.nombre = "NN";
+        this.altura = 0;
+        this.peso = 0;
+        this.comentarios = "Sin Comentarios";
+        this.imagen = "URL";
     }
 
     public String getNomnbre() {
-        return nomnbre;
+        return nombre;
     }
 
     public void setNomnbre(String nomnbre) {
-        this.nomnbre = nomnbre;
+        this.nombre = nomnbre;
     }
 
     public float getAltura() {
