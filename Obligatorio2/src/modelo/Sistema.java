@@ -5,10 +5,15 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author vince
  */
 public class Sistema {
-    //Hola Mundo
+    ArrayList<Mascota> mascotas = new ArrayList<>();
+    ArrayList<Persona> personas = new ArrayList<>();
+    Familia familia = new Familia(mascotas, personas);
+    
 }

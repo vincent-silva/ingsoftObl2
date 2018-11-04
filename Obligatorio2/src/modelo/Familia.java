@@ -14,4 +14,37 @@ import java.util.ArrayList;
 public class Familia {
     private ArrayList<Mascota> mascotas;
     private ArrayList<Persona> integrantes;
+
+    public Familia() {
+        
+    }
+    
+    public Familia(ArrayList<Mascota> mascotas, ArrayList<Persona> integrantes) {
+        this.mascotas = mascotas;
+        this.integrantes = integrantes;
+    }
+
+    public ArrayList<Mascota> getMascotas() {
+        return mascotas;
+    }
+
+    public void setMascotas(ArrayList<Mascota> mascotas) {
+        this.mascotas = mascotas;
+    }
+
+    public ArrayList<Persona> getIntegrantes() {
+        return integrantes;
+    }
+
+    public void setIntegrantes(ArrayList<Persona> integrantes) {
+        this.integrantes = integrantes;
+    }
+    
+    public void addIntegrante(Persona integrante) {
+        this.integrantes.add(integrante);
+    }
+    
+    public void delIntegrante(Persona integrante) {
+        this.integrantes.remove(integrante);
+    }
 }

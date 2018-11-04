@@ -5,10 +5,14 @@
  */
 package modelo;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author vince
  */
 public class Evento {
-    
+    private Persona responsable;
+    private int actividad;
+    private LocalDateTime fecha;
 }

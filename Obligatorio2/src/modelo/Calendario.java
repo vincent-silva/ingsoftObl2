@@ -5,14 +5,12 @@
  */
 package modelo;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  *
  * @author vince
  */
 public class Calendario {
-    private Persona responsable;
-    private int actividad;
-    private LocalDateTime fecha;
+    private ArrayList<Evento> eventos;
 }
