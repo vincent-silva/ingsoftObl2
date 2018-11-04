@@ -27,10 +27,10 @@ public class Persona {
         this.sexo = unSexo;
     }
     
-    public String getNomnbre() {
+    public String getNombre() {
         return nombre;
     }
-    public void setNomnbre(String unNombre) {
+    public void setNombre(String unNombre) {
         this.nombre = unNombre;
     }    
     public float getEdad(){
@@ -48,6 +48,6 @@ public class Persona {
     
     @Override
     public boolean equals(Object obj){
-        return this.getNomnbre().toUpperCase().equals(((Persona)obj).getNomnbre().toUpperCase());
+        return this.getNombre().toUpperCase().equals(((Persona)obj).getNombre().toUpperCase());
     }
 }
