@@ -21,21 +21,14 @@ import org.junit.Ignore;
  * @author vince
  */
 public class PersonaTest {
-    @Test
-    public void testConstructorNombre() {
-        System.out.println("PersonaTest - constructorNombre");
-        Persona instancia = new Persona();
-        
-        assertEquals("NN", instancia.getNombre());
-    }
-
+    private Persona instancia;
     /**
      * Test of setNomnbre method, of class Persona.
      */
     @Test
-    public void testSetNombre() {
-        System.out.println("PersonaTest - setNomnbre");
-        Persona instancia = new Persona();
+    public void setNombre_normal() {
+        System.out.println("PersonaTest - setNomnbre: normal");
+        instancia = new Persona();
         
         String unNombre = "Nombre";
         instancia.setNombre(unNombre);
@@ -44,27 +37,89 @@ public class PersonaTest {
     }
     
     @Test(expected=IllegalArgumentException.class)
-    public void testSetNombreVacio() {
-        System.out.println("PersonaTest - SetNombreVacio");
-        Persona instancia = new Persona();
+    public void setNombre_vacio() {
+        System.out.println("PersonaTest - setNombre: vacio");
+        instancia = new Persona();
         String unNombre = null;
         
         instancia.setNombre(unNombre);
     }
     
-    /**
-     * Test of equals method, of class Persona.
-     */
-    @Ignore("Test autogenrado")
     @Test
-    public void testEquals() {
-        System.out.println("equals");
+    public void setEdad_normal() {
+        System.out.println("PersonaTest - setEdad: normal");
+        instancia = new Persona();
+        int edad = 18;
+        
+        instancia.setEdad(edad);
+        
+        assertEquals(edad, instancia.getEdad());
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void setEdad_vacio() {
+        System.out.println("PersonaTest - setEdad: vacio");
+        instancia = new Persona();
+        Integer edad = null;
+        
+        instancia.setEdad(edad);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void setEdad_conComma() {
+        System.out.println("PersonaTest - setEdad: con coma");
+        instancia = new Persona();
+        float edad = 3.5f;
+        
+        instancia.setEdad(edad);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void setEdad_negativa() {
+        System.out.println("PersonaTest - setEdad: negativa");
+        instancia = new Persona();
+        int edad = -10;
+        
+        instancia.setEdad(edad);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void setEdad_cero(){
+        System.out.println("PersonaTest - setEdad: cero");
+        instancia = new Persona();
+        int edad = 0;
+        
+        instancia.setEdad(edad);
+    }
+    
+    
+    @Test
+    public void equals_mismoObjeto() {
+        System.out.println("PersonaTest - equals: mismo objeto");
+        instancia = new Persona();
+        boolean resultado = true;
+        
+        assertEquals(resultado, instancia.equals(instancia));
+    }
+    
+    @Test
+    public void equals_nulo() {
+        System.out.println("PersonaTest - equals: diferentes objetos");
         Object obj = null;
-        Persona instance = new Persona();
-        boolean expResult = false;
-        boolean result = instance.equals(obj);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Persona instancia = new Persona();
+        boolean resultado = false;
+        
+        assertEquals(resultado, instancia.equals(obj));        
+    }
+    
+    @Test
+    public void equals_diferentesPersonas() {
+        System.out.println("PersonaTest - equals: mismo nombre diferente edad");
+        Persona instancia1 = new Persona("Nombre Apellido", 40, 'M');
+        Persona instancia2 = new Persona("Nombre Apellido", 15, 'M');
+        
+        boolean resultado = false;
+        
+        assertEquals(resultado, instancia1.equals(instancia2));
     }
 }
