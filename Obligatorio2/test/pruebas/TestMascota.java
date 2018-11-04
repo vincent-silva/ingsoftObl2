@@ -11,15 +11,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import modelo.*;
 
 /**
  *
  * @author vince
  */
-public class TestSistema {
+public class TestMascota {
     
-    public TestSistema() {
+    public TestMascota() {
     }
     
     @BeforeClass
