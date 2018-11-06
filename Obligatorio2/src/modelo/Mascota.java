@@ -31,11 +31,11 @@ public class Mascota {
         this.imagen = "URL";
     }
 
-    public String getNomnbre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNomnbre(String nomnbre) {
+    public void setNombre(String nomnbre) {
         this.nombre = nomnbre;
     }
 
@@ -73,6 +73,6 @@ public class Mascota {
     
     @Override
     public boolean equals(Object obj){
-        return this.getNomnbre().toUpperCase().equals(((Mascota)obj).getNomnbre().toUpperCase());
+        return this.getNombre().toUpperCase().equals(((Mascota)obj).getNombre().toUpperCase());
     }
 }
