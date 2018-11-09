@@ -66,6 +66,10 @@ public class Familia {
     }
     @Override
     public boolean equals(Object obj){
-        return this.getNombre().toUpperCase().equals(((Familia)obj).getNombre().toUpperCase());
+        boolean respuesta = false;
+        if (obj instanceof Familia){
+            respuesta =  this.getNombre().toUpperCase().equals(((Familia)obj).getNombre().toUpperCase());
+        }
+        return respuesta;
     }
 }

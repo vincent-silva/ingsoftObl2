@@ -13,6 +13,6 @@ import java.time.LocalDateTime;
  */
 public class Evento {
     private Persona responsable;
-    private int actividad;
     private LocalDateTime fecha;
 }
+

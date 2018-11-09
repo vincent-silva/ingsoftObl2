@@ -73,6 +73,10 @@ public class Mascota {
     
     @Override
     public boolean equals(Object obj){
-        return this.getNombre().toUpperCase().equals(((Mascota)obj).getNombre().toUpperCase());
+        boolean respuesta = false;
+        if (obj instanceof Mascota) {
+            respuesta = this.getNombre().toUpperCase().equals(((Mascota)obj).getNombre().toUpperCase());
+        }
+        return respuesta;
     }
 }

@@ -10,44 +10,53 @@ package modelo;
  * @author vince
  */
 public class Persona {
+
     private String nombre;
     private float edad;
     private char sexo;
 
-
-    public Persona(){
+    public Persona() {
         this.nombre = "NN";
         this.edad = 0;
         this.sexo = 'Q';
     }
-    
-    public Persona(String unNombre, float unaEdad, char unSexo){
+
+    public Persona(String unNombre, float unaEdad, char unSexo) {
         this.nombre = unNombre;
         this.edad = unaEdad;
         this.sexo = unSexo;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
+
     public void setNombre(String unNombre) {
         this.nombre = unNombre;
-    }    
-    public float getEdad(){
+    }
+
+    public float getEdad() {
         return edad;
     }
-    public void setEdad(float unaEdad){
+
+    public void setEdad(float unaEdad) {
         this.edad = unaEdad;
     }
-    public char getSexo(){
+
+    public char getSexo() {
         return sexo;
     }
-    public void setSexo(char unSexo){
+
+    public void setSexo(char unSexo) {
         this.sexo = unSexo;
     }
-    
+
     @Override
-    public boolean equals(Object obj){
-        return this.getNombre().toUpperCase().equals(((Persona)obj).getNombre().toUpperCase());
+    public boolean equals(Object obj) {
+        boolean respuesta = false;
+        if (obj instanceof Persona) {
+            respuesta=this.getNombre().toUpperCase().equals(((Persona) obj).getNombre().toUpperCase());
+        }
+        return respuesta;
     }
 }
