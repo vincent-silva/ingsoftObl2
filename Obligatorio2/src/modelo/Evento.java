@@ -14,5 +14,15 @@ import java.time.LocalDateTime;
 public class Evento {
     private Persona responsable;
     private LocalDateTime fecha;
+    
+    public Evento(){
+        responsable = new Persona();
+        fecha = null;
+    }
+    public Evento(Persona unRespnsable, LocalDateTime unaFecha){
+        responsable = unRespnsable;
+        fecha = unaFecha;
+    }
 }
+
 
