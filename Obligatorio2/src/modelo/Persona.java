@@ -60,4 +60,8 @@ public class Persona {
         }
         return respuesta;
     }
+    @Override
+    public String toString(){
+        return this.getNombre();
+    }
 }

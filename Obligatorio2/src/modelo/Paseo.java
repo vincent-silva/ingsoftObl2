@@ -24,4 +24,9 @@ public class Paseo extends Evento{
     public String getRecorrido(){
         return this.recorrido;
     }
+    @Override
+    public String toString(){
+        return super.getResponsable().toString() + " es responsable de pasear a " + 
+                super.getMascotas().toString();
+    }
 }

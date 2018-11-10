@@ -18,11 +18,16 @@ public class Comida extends Evento{
     public Comida(String unAlimento){
         this.alimento  = unAlimento;
     }
-    public void setRecorrido(String unAlimento){
+    public void setComida(String unAlimento){
         this.alimento = unAlimento;
     }
-    public String getRecorrido(){
+    public String getComida(){
         return this.alimento;
+    }
+    @Override
+    public String toString(){
+        return super.getResponsable().toString() + " es responsable de darle " + this.getComida() +
+                " a " + super.getMascotas().toString();
     }
 }
 
