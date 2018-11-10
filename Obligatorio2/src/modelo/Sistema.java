@@ -45,9 +45,17 @@ public class Sistema {
     }
     public ArrayList<Comida> getComidas(){
         ArrayList<Comida> retorno = null;
-        for(Evento com : this.eventos){
-            if(com instanceof Comida)
-                retorno.add((Comida)com);
+        for(Evento ev : this.eventos){
+            if(ev instanceof Comida)
+                retorno.add((Comida)ev);
+        }
+        return retorno;
+    }
+    public ArrayList<Evento> getEventosDelDia(int ano, int mes, int dia){
+        ArrayList<Evento> retorno = null;
+        for(Evento ev: this.eventos){
+            if(ev.esDelDia(ano, mes, dia))
+                retorno.add(ev);
         }
         return retorno;
     }
