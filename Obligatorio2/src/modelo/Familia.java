@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import java.awt.Image;
 import java.util.ArrayList;
 
 /**
@@ -15,17 +16,23 @@ public class Familia {
     private String nombre;
     private ArrayList<Mascota> mascotas;
     private ArrayList<Persona> integrantes;
+    private ArrayList<Image> imagenes;
+    private String comentarios;
 
     public Familia() {
-        this.nombre = "NN";
+        this.nombre = "";
         this.mascotas = null;
         this.integrantes = null;
+        this.imagenes = null;
+        this.comentarios = "";
     }
     
     public Familia(String unNombre) {
         this.nombre = unNombre;
         this.mascotas = null;
         this.integrantes = null;
+        this.imagenes = null;
+        this.comentarios = "";
     }
     public String getNombre(){
         return nombre;
@@ -50,20 +57,21 @@ public class Familia {
         this.integrantes = integrantes;
     }
     
-    public void addIntegrante(Persona unIntegrante) {
+    public void agregarIntegrante(Persona unIntegrante) {
         this.integrantes.add(unIntegrante);
     }
     
-    public void delIntegrante(Persona unIntegrante) {
+    public void borrarIntegrante(Persona unIntegrante) {
         this.integrantes.remove(unIntegrante);
     }
-    public void addMascota(Mascota unaMascota) {
+    public void agregarMascota(Mascota unaMascota) {
         this.mascotas.add(unaMascota);
     }
     
-    public void delMascota(Mascota unaMascota) {
+    public void borrarMascota(Mascota unaMascota) {
         this.mascotas.remove(unaMascota);
     }
+    
     @Override
     public boolean equals(Object obj){
         boolean respuesta = false;
