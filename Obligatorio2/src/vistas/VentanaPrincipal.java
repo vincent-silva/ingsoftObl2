@@ -28,43 +28,36 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         barraMenu = new javax.swing.JMenuBar();
         menuPrograma = new javax.swing.JMenu();
-        menuFamilia = new javax.swing.JMenu();
+        menuOpciones = new javax.swing.JMenu();
+        menuFamilia = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 586, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 402, Short.MAX_VALUE)
-        );
 
         menuPrograma.setText("Programa");
         barraMenu.add(menuPrograma);
 
-        menuFamilia.setText("Familia");
-        menuFamilia.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                menuFamiliaMenuSelected(evt);
+        menuOpciones.setText("Opciones");
+        menuOpciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuOpcionesActionPerformed(evt);
             }
         });
+
+        menuFamilia.setText("Familia");
         menuFamilia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuFamiliaActionPerformed(evt);
             }
         });
-        barraMenu.add(menuFamilia);
+        menuOpciones.add(menuFamilia);
+
+        jMenuItem1.setText("jMenuItem1");
+        menuOpciones.add(jMenuItem1);
+
+        barraMenu.add(menuOpciones);
 
         setJMenuBar(barraMenu);
 
@@ -72,31 +65,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 598, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 402, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void menuOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuOpcionesActionPerformed
+        JOptionPane.showMessageDialog(this, "No se puede pasar el turno, toravia tiene movimientos disponibles", "Alerta", JOptionPane.WARNING_MESSAGE);
+    }//GEN-LAST:event_menuOpcionesActionPerformed
+
     private void menuFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuFamiliaActionPerformed
-        JOptionPane.showMessageDialog(null, evt, "Test", JOptionPane.INFORMATION_MESSAGE);
+        VentanaFamilia ventana = new VentanaFamilia(this.modelo);
+        ventana.setVisible(true);
     }//GEN-LAST:event_menuFamiliaActionPerformed
-
-    private void menuFamiliaMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_menuFamiliaMenuSelected
-
-    }//GEN-LAST:event_menuFamiliaMenuSelected
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JMenu menuFamilia;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem menuFamilia;
+    private javax.swing.JMenu menuOpciones;
     private javax.swing.JMenu menuPrograma;
     // End of variables declaration//GEN-END:variables
 }
