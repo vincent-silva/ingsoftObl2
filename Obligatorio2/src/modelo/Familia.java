@@ -21,16 +21,16 @@ public class Familia {
 
     public Familia() {
         this.nombre = "";
-        this.mascotas = null;
-        this.integrantes = null;
+        this.mascotas = new ArrayList<>();
+        this.integrantes = new ArrayList<>();
         this.imagenes = null;
         this.comentarios = "";
     }
     
     public Familia(String unNombre) {
         this.nombre = unNombre;
-        this.mascotas = null;
-        this.integrantes = null;
+        this.mascotas = new ArrayList<>();
+        this.integrantes = new ArrayList<>();
         this.imagenes = null;
         this.comentarios = "";
     }

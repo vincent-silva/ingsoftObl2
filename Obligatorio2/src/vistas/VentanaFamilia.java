@@ -5,6 +5,8 @@
  */
 package vistas;
 
+import java.util.HashSet;
+import java.util.Set;
 import modelo.Sistema;
 
 /**
@@ -18,8 +20,15 @@ public class VentanaFamilia extends javax.swing.JFrame {
     public VentanaFamilia(Sistema unModelo) {
         this.modelo = unModelo;
         initComponents();
-        
-        
+        actualizarVentana();
+    }
+    
+    public void setModelo(Sistema unModelo) {
+        this.modelo = unModelo;
+    }
+    
+    public Sistema getModelo() {
+        return this.modelo;
     }
 
     /**
@@ -104,4 +113,8 @@ public class VentanaFamilia extends javax.swing.JFrame {
     private javax.swing.JList<String> lstIntegrantes;
     private javax.swing.JList<String> lstMascotas;
     // End of variables declaration//GEN-END:variables
+
+    private void actualizarVentana() {
+//        this.lstIntegrantes.setListData(this.getModelo().getIntegrantes().toArray());
+    }
 }
