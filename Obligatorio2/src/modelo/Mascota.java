@@ -13,15 +13,17 @@ public class Mascota {
     private String nombre;
     private float altura;
     private float peso;
+    private int edad;
     private String comentarios;
     private String imagen;
 
-    public Mascota(String unNombre, float unAltura, float unPeso, String unComentario, String unaImagen) {
+    public Mascota(String unNombre, float unAltura, float unPeso, int unaEdad, String unComentario, String unaImagen) {
         this.nombre = unNombre;
         this.altura = unAltura;
         this.peso = unPeso;
         this.comentarios = unComentario;
         this.imagen = unaImagen;
+        this.edad = unaEdad;
     }
     public Mascota() {
         this.nombre = "NN";
