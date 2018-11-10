@@ -5,11 +5,13 @@
  */
 package modelo;
 
+import java.util.Observable;
+
 /**
  *
  * @author vince
  */
-public class Mascota {
+public class Mascota extends Observable {
     private String nombre;
     private float altura;
     private float peso;
@@ -25,15 +27,7 @@ public class Mascota {
         this.imagen = unaImagen;
         this.edad = unaEdad;
     }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-    
+        
     public Mascota() {
         this.nombre = "NN";
         this.altura = 0;
@@ -41,6 +35,24 @@ public class Mascota {
         this.comentarios = "Sin Comentarios";
         this.imagen = "URL";
     }
+    
+    public Mascota(Mascota unaMascota) {
+        this.nombre = unaMascota.getNombre();
+        this.altura = unaMascota.getAltura();
+        this.peso = unaMascota.getPeso();
+        this.comentarios = unaMascota.getComentarios();
+        this.imagen = unaMascota.getImagen();
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+        this.notifyObservers();
+    }
+
 
     public String getNombre() {
         return nombre;
@@ -48,6 +60,7 @@ public class Mascota {
 
     public void setNombre(String nomnbre) {
         this.nombre = nomnbre;
+        this.notifyObservers();
     }
 
     public float getAltura() {
@@ -56,6 +69,7 @@ public class Mascota {
 
     public void setAltura(float altura) {
         this.altura = altura;
+        this.notifyObservers();
     }
 
     public float getPeso() {
@@ -64,6 +78,7 @@ public class Mascota {
 
     public void setPeso(float peso) {
         this.peso = peso;
+        this.notifyObservers();
     }
 
     public String getComentarios() {
@@ -72,6 +87,7 @@ public class Mascota {
 
     public void setComentarios(String comentarios) {
         this.comentarios = comentarios;
+        this.notifyObservers();
     }
 
     public String getImagen() {
@@ -80,6 +96,7 @@ public class Mascota {
 
     public void setImagen(String imagen) {
         this.imagen = imagen;
+        this.notifyObservers();
     }
     
     @Override
@@ -93,5 +110,15 @@ public class Mascota {
     @Override
     public String toString(){
         return this.getNombre();
+    }
+    
+    /**
+     * Se sobreescribe para ejecutar setChanged, ya que se espera que se
+     * ejecuten juntos siempre dentro del modelo
+     */
+    @Override
+    public void notifyObservers(){
+        this.setChanged();
+        super.notifyObservers();
     }
 }
