@@ -22,9 +22,7 @@ import org.junit.Ignore;
  */
 public class PersonaTest {
     private Persona instancia;
-    /**
-     * Test of setNomnbre method, of class Persona.
-     */
+    
     @Test
     public void setNombre_normal() {
         instancia = new Persona();
@@ -37,7 +35,6 @@ public class PersonaTest {
     
     @Test(expected=IllegalArgumentException.class)
     public void setNombre_vacio() {
-        System.out.println("PersonaTest - setNombre: vacio");
         instancia = new Persona();
         String unNombre = null;
         
@@ -46,7 +43,6 @@ public class PersonaTest {
     
     @Test
     public void setEdad_normal() {
-        System.out.println("PersonaTest - setEdad: normal");
         instancia = new Persona();
         int edad = 18;
         
@@ -57,7 +53,6 @@ public class PersonaTest {
     
     @Test(expected = IllegalArgumentException.class)
     public void setEdad_vacio() {
-        System.out.println("PersonaTest - setEdad: vacio");
         instancia = new Persona();
         Integer edad = null;
         
@@ -66,7 +61,6 @@ public class PersonaTest {
     
     @Test(expected = IllegalArgumentException.class)
     public void setEdad_conComma() {
-        System.out.println("PersonaTest - setEdad: con coma");
         instancia = new Persona();
         float edad = 3.5f;
         
@@ -75,7 +69,6 @@ public class PersonaTest {
     
     @Test(expected = IllegalArgumentException.class)
     public void setEdad_negativa() {
-        System.out.println("PersonaTest - setEdad: negativa");
         instancia = new Persona();
         int edad = -10;
         
@@ -83,8 +76,7 @@ public class PersonaTest {
     }
     
     @Test(expected = IllegalArgumentException.class)
-    public void setEdad_cero(){
-        System.out.println("PersonaTest - setEdad: cero");
+    public void setEdad_cero(){ 
         instancia = new Persona();
         int edad = 0;
         
@@ -94,7 +86,6 @@ public class PersonaTest {
     
     @Test
     public void equals_mismoObjeto() {
-        System.out.println("PersonaTest - equals: mismo objeto");
         instancia = new Persona();
         boolean resultado = true;
         
@@ -103,7 +94,6 @@ public class PersonaTest {
     
     @Test
     public void equals_nulo() {
-        System.out.println("PersonaTest - equals: diferentes objetos");
         Object obj = null;
         Persona instancia = new Persona();
         boolean resultado = false;
@@ -113,7 +103,6 @@ public class PersonaTest {
     
     @Test
     public void equals_diferentesPersonas() {
-        System.out.println("PersonaTest - equals: mismo nombre diferente edad");
         Persona instancia1 = new Persona("Nombre Apellido", 40, 'M');
         Persona instancia2 = new Persona("Nombre Apellido", 15, 'M');
         
