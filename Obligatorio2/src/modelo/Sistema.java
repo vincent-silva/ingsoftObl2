@@ -6,12 +6,13 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
 /**
  *
  * @author vince
  */
-public class Sistema {
+public class Sistema extends Observable {
 
     private Familia familia;
     private ArrayList<Evento> eventos;
@@ -43,10 +44,12 @@ public class Sistema {
     
     public void agregarMascota(Mascota mascota) {
         this.getFamilia().agregarMascota(mascota);
+        this.notifyObservers();
     }
     
     public void borrarMascota(Mascota mascota) {
         this.getFamilia().borrarMascota(mascota);
+        this.notifyObservers();
     }
     
     public ArrayList<Mascota> getMascotas() {
@@ -93,5 +96,15 @@ public class Sistema {
             }
         }
         return retorno;
+    }
+    
+    /**
+     * Se sobreescribe para ejecutar setChanged, ya que se espera que se
+     * ejecuten juntos siempre dentro del modelo
+     */
+    @Override
+    public void notifyObservers(){
+        this.setChanged();
+        super.notifyObservers();
     }
 }
