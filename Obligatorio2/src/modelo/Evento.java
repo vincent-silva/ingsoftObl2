@@ -13,39 +13,46 @@ import java.util.ArrayList;
  * @author vince
  */
 public class Evento {
+
     private Persona responsable;
     private LocalDateTime fecha;
     private ArrayList<Mascota> mascotas;
-    
-    public Evento(){
+
+    public Evento() {
         responsable = new Persona();
         fecha = null;
     }
-    public Evento(Persona unRespnsable, LocalDateTime unaFecha){
+
+    public Evento(Persona unRespnsable, LocalDateTime unaFecha) {
         responsable = unRespnsable;
         fecha = unaFecha;
     }
-    public Persona getResponsable(){
+
+    public Persona getResponsable() {
         return this.responsable;
     }
-    public void setResponsable(Persona unResposable){
+
+    public void setResponsable(Persona unResposable) {
         this.responsable = unResposable;
     }
-    public LocalDateTime getFecha(){
+
+    public LocalDateTime getFecha() {
         return this.fecha;
     }
-    public void setFecha(LocalDateTime unaFecha){
+
+    public void setFecha(LocalDateTime unaFecha) {
         this.fecha = unaFecha;
     }
-    public void agregarMascota(Mascota unaMascota){
+
+    public void agregarMascota(Mascota unaMascota) {
         this.mascotas.add(unaMascota);
     }
-    public ArrayList<Mascota> getMascotas(){
+
+    public ArrayList<Mascota> getMascotas() {
         return this.mascotas;
     }
-    public void borrarMascota(Mascota unaMascota){
+
+    public void borrarMascota(Mascota unaMascota) {
         this.mascotas.remove(unaMascota);
     }
 }
-
-

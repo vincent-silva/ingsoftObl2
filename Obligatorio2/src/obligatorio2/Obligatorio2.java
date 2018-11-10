@@ -5,17 +5,19 @@
  */
 package obligatorio2;
 
+import modelo.Sistema;
+import vistas.VentanaPrincipal;
+
 /**
  *
  * @author vince
  */
 public class Obligatorio2 {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        Sistema modelo = new Sistema();
+        VentanaPrincipal ventana = new VentanaPrincipal(modelo);
+        ventana.setVisible(true);
     }
     
 }
