@@ -53,7 +53,11 @@ public class Persona {
 
     @Override
     public boolean equals(Object obj) {
-<span class="fc" id="L56">        return this.getNombre().toUpperCase().equals(((Persona) obj).getNombre().toUpperCase());</span>
+<span class="fc" id="L56">        boolean respuesta = false;</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (obj instanceof Persona) {</span>
+<span class="fc" id="L58">            respuesta=this.getNombre().toUpperCase().equals(((Persona) obj).getNombre().toUpperCase());</span>
+        }
+<span class="fc" id="L60">        return respuesta;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

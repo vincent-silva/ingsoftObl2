@@ -11,9 +11,19 @@ import java.time.LocalDateTime;
  *
  * @author vince
  */
-<span class="nc" id="L14">public class Evento {</span>
+public class Evento {
     private Persona responsable;
-    private int actividad;
     private LocalDateTime fecha;
+    
+<span class="nc" id="L18">    public Evento(){</span>
+<span class="nc" id="L19">        responsable = new Persona();</span>
+<span class="nc" id="L20">        fecha = null;</span>
+<span class="nc" id="L21">    }</span>
+<span class="nc" id="L22">    public Evento(Persona unRespnsable, LocalDateTime unaFecha){</span>
+<span class="nc" id="L23">        responsable = unRespnsable;</span>
+<span class="nc" id="L24">        fecha = unaFecha;</span>
+<span class="nc" id="L25">    }</span>
 }
+
+
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

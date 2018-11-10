@@ -55,7 +55,8 @@ public class Persona {
     public boolean equals(Object obj) {
         boolean respuesta = false;
         if (obj instanceof Persona) {
-            respuesta=this.getNombre().toUpperCase().equals(((Persona) obj).getNombre().toUpperCase());
+            respuesta=this.getNombre().toUpperCase().equals(((Persona)obj).getNombre().toUpperCase())&
+                    this.getEdad()==((Persona)obj).getEdad();
         }
         return respuesta;
     }

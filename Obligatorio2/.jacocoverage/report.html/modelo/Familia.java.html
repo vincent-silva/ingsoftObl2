@@ -66,7 +66,11 @@ public class Familia {
 <span class="nc" id="L66">    }</span>
     @Override
     public boolean equals(Object obj){
-<span class="nc" id="L69">        return this.getNombre().toUpperCase().equals(((Familia)obj).getNombre().toUpperCase());</span>
+<span class="nc" id="L69">        boolean respuesta = false;</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">        if (obj instanceof Familia){</span>
+<span class="nc" id="L71">            respuesta =  this.getNombre().toUpperCase().equals(((Familia)obj).getNombre().toUpperCase());</span>
+        }
+<span class="nc" id="L73">        return respuesta;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
