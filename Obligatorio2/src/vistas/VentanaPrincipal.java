@@ -18,6 +18,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.modelo = unModelo;
         initComponents();
     }
+    
+    public Sistema getModelo() {
+        return this.modelo;
+    }
+    
+    public void setModelo(Sistema unModelo) {
+        this.modelo = unModelo;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,13 +38,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         barraMenu = new javax.swing.JMenuBar();
         menuPrograma = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         menuOpciones = new javax.swing.JMenu();
         menuFamilia = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        menuMascotas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         menuPrograma.setText("Programa");
+
+        jMenuItem2.setText("jMenuItem2");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        menuPrograma.add(jMenuItem2);
+
         barraMenu.add(menuPrograma);
 
         menuOpciones.setText("Opciones");
@@ -54,8 +72,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         menuOpciones.add(menuFamilia);
 
-        jMenuItem1.setText("jMenuItem1");
-        menuOpciones.add(jMenuItem1);
+        menuMascotas.setText("Mascotas");
+        menuMascotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuMascotasActionPerformed(evt);
+            }
+        });
+        menuOpciones.add(menuMascotas);
 
         barraMenu.add(menuOpciones);
 
@@ -84,10 +107,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ventana.setVisible(true);
     }//GEN-LAST:event_menuFamiliaActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void menuMascotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuMascotasActionPerformed
+        VentanaMascotas ventana = new VentanaMascotas(this.getModelo());
+        ventana.setVisible(true);
+    }//GEN-LAST:event_menuMascotasActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem menuFamilia;
+    private javax.swing.JMenuItem menuMascotas;
     private javax.swing.JMenu menuOpciones;
     private javax.swing.JMenu menuPrograma;
     // End of variables declaration//GEN-END:variables

@@ -22,17 +22,17 @@ public class Obligatorio2 {
         Persona integrante1 = new Persona("Barak Obama", 54, 'M');
         Persona integrante2 = new Persona("Mandrake Wolf", 29, 'M');
         Persona integrante3 = new Persona("Carla Peterson", 29, 'M');
-        Mascota mascota1 = new Mascota("Ataque", 10, 10, 10, "Comentario", "una imagen");
+        Mascota mascota1 = new Mascota("Ataque", 10, 10, 10, "Comentario", "D:\\ORT\\Materias\\IngenieriaDeSoftware\\Pinder\\dogrunning.jpg");
         Mascota mascota2 = new Mascota("Tony", 10, 10, 10, "otro comentario", "imagen");
         System.out.println(integrante1);
         modelo.agregarIntegrante(integrante1);
         modelo.agregarIntegrante(integrante2 );
         modelo.agregarIntegrante(integrante3);
         modelo.agregarMascota(mascota1);
-        modelo.agregarMascota(mascota2);
-
-//        VentanaPrincipal ventana = new VentanaPrincipal(modelo);
-//        ventana.setVisible(true);
+        modelo.agregarMascota(mascota2); 
+        
+        VentanaPrincipal ventana = new VentanaPrincipal(modelo);
+        ventana.setVisible(true);
     }
     
 }
