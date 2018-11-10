@@ -25,6 +25,15 @@ public class Mascota {
         this.imagen = unaImagen;
         this.edad = unaEdad;
     }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    
     public Mascota() {
         this.nombre = "NN";
         this.altura = 0;
