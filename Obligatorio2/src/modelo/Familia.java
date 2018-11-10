@@ -71,6 +71,21 @@ public class Familia {
     public void borrarMascota(Mascota unaMascota) {
         this.mascotas.remove(unaMascota);
     }
+    public ArrayList<Image> getImagenes(){
+        return this.imagenes;
+    }
+    public void agregarImagen(Image img){
+        this.imagenes.add(img);
+    }
+    public void borrarImagen(Image img){
+        this.imagenes.remove(img);
+    }
+    public void setComentarios(String unComentario){
+        this.comentarios = unComentario;
+    }
+    public String getComentario(){
+        return this.comentarios;
+    }
     
     @Override
     public boolean equals(Object obj){
