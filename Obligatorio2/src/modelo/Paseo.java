@@ -12,4 +12,16 @@ package modelo;
 public class Paseo extends Evento{
     private String recorrido;
     
+    public Paseo(){
+        this.recorrido = "";
+    }
+    public Paseo(String unRecorrido){
+        this.recorrido  = unRecorrido;
+    }
+    public void setRecorrido(String unRecorrido){
+        this.recorrido = unRecorrido;
+    }
+    public String getRecorrido(){
+        return this.recorrido;
+    }
 }

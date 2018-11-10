@@ -27,7 +27,6 @@ public class PersonaTest {
      */
     @Test
     public void setNombre_normal() {
-        System.out.println("PersonaTest - setNomnbre: normal");
         instancia = new Persona();
         
         String unNombre = "Nombre";

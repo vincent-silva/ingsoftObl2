@@ -6,6 +6,7 @@
 package modelo;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 public class Evento {
     private Persona responsable;
     private LocalDateTime fecha;
+    private ArrayList<Mascota> mascotas;
     
     public Evento(){
         responsable = new Persona();
@@ -22,6 +24,27 @@ public class Evento {
     public Evento(Persona unRespnsable, LocalDateTime unaFecha){
         responsable = unRespnsable;
         fecha = unaFecha;
+    }
+    public Persona getResponsable(){
+        return this.responsable;
+    }
+    public void setResponsable(Persona unResposable){
+        this.responsable = unResposable;
+    }
+    public LocalDateTime getFecha(){
+        return this.fecha;
+    }
+    public void setFecha(LocalDateTime unaFecha){
+        this.fecha = unaFecha;
+    }
+    public void agregarMascota(Mascota unaMascota){
+        this.mascotas.add(unaMascota);
+    }
+    public ArrayList<Mascota> getMascotas(){
+        return this.mascotas;
+    }
+    public void borrarMascota(Mascota unaMascota){
+        this.mascotas.remove(unaMascota);
     }
 }
 

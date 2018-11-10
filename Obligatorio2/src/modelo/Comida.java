@@ -11,4 +11,18 @@ package modelo;
  */
 public class Comida extends Evento{
     private String alimento;
+    
+    public Comida(){
+        this.alimento = "";
+    }
+    public Comida(String unAlimento){
+        this.alimento  = unAlimento;
+    }
+    public void setRecorrido(String unAlimento){
+        this.alimento = unAlimento;
+    }
+    public String getRecorrido(){
+        return this.alimento;
+    }
 }
+
