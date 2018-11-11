@@ -17,6 +17,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal(Sistema unModelo) {
         this.modelo = unModelo;
         initComponents();
+        this.actualizarVentana();
     }
     
     public Sistema getModelo() {
@@ -36,18 +37,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
         barraMenu = new javax.swing.JMenuBar();
         menuPrograma = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         menuOpciones = new javax.swing.JMenu();
         menuFamilia = new javax.swing.JMenuItem();
         menuMascotas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        menuPrograma.setText("Programa");
+        jList1.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
 
-        jMenuItem2.setText("jMenuItem2");
+        menuPrograma.setText("Calendario");
+
+        jMenuItem2.setText("Salir");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -56,6 +68,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuPrograma.add(jMenuItem2);
 
         barraMenu.add(menuPrograma);
+
+        jMenu1.setText("Eventos");
+
+        jMenuItem1.setText("Nuevo evento");
+        jMenu1.add(jMenuItem1);
+
+        barraMenu.add(jMenu1);
 
         menuOpciones.setText("Opciones");
         menuOpciones.addActionListener(new java.awt.event.ActionListener() {
@@ -88,11 +107,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 962, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 402, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -116,9 +141,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ventana.setVisible(true);
     }//GEN-LAST:event_menuMascotasActionPerformed
 
+    private void actualizarVentana() {
+        this.jList1.setListData(this.getModelo().getEventos().toArray());
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JList jList1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem menuFamilia;
     private javax.swing.JMenuItem menuMascotas;
     private javax.swing.JMenu menuOpciones;

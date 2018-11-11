@@ -55,10 +55,18 @@ public class Evento {
     public void borrarMascota(Mascota unaMascota) {
         this.mascotas.remove(unaMascota);
     }
-    public boolean esDelDia(int ano, int mes, int dia){
+
+    public boolean esDelDia(int ano, int mes, int dia) {
         boolean retorno = false;
-        if((this.fecha.getYear()==ano)&(this.fecha.getMonthValue()==mes)&(this.fecha.getDayOfMonth()==dia))
+        if ((this.fecha.getYear() == ano) & (this.fecha.getMonthValue() == mes) & (this.fecha.getDayOfMonth() == dia)) {
             retorno = true;
+        }
         return retorno;
     }
+
+    @Override
+    public String toString() {
+        return "Evento{" + "responsable=" + responsable + ", fecha=" + fecha + ", mascotas=" + mascotas + '}';
+    }
+    
 }
