@@ -5,9 +5,12 @@
  */
 package obligatorio2;
 
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import modelo.Mascota;
 import modelo.Persona;
 import modelo.Sistema;
+import vistas.VentanaDePruebas;
 import vistas.VentanaPrincipal;
 
 /**
@@ -16,7 +19,7 @@ import vistas.VentanaPrincipal;
  */
 public class Obligatorio2 {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, UnsupportedLookAndFeelException, IllegalAccessException {
         Sistema modelo = new Sistema();
         
         Persona integrante1 = new Persona("Barak Obama", 54, 'M');
@@ -31,8 +34,13 @@ public class Obligatorio2 {
         modelo.agregarMascota(mascota1);
         modelo.agregarMascota(mascota2); 
         
+//        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        
         VentanaPrincipal ventana = new VentanaPrincipal(modelo);
         ventana.setVisible(true);
+        
+        VentanaDePruebas ventana2 = new VentanaDePruebas(modelo);
+        ventana2.setVisible(true);
     }
     
 }
